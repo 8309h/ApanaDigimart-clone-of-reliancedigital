@@ -1,0 +1,183 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+}
+
+#nav h1 {
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+#img {
+    width: 20%;
+}
+
+#img>a>img {
+    width: 100%;
+    height: 80px;
+}
+
+#fuction {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+#fuction button {
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+}
+
+#fuction span {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#nav h1 {
+    color: white;
+}
+
+#nav2 {
+    display: flex;
+    justify-content: space-around;
+    background-color: #003380;
+}
+
+#nav2 button {
+    background-color: #003380;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+}
+
+#nav2 button:hover {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-weight: bold;
+}
+
+#stick {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+}
+
+#div2 {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-top: 40px;
+
+
+}
+
+#div2 img {
+    width: 70%;
+    height: 40%;
+}
+
+#div2 div {
+    height: 500px;
+    padding: 10px;
+    box-shadow: rgba(7, 7, 7, 0.35) 0px 5px 15px;
+}
+
+#div2>div h3,
+p {
+
+    margin: 10px;
+
+}
+
+
+#div2 button:hover {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#div2 button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+#body {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#div1 {
+    width: 20%;
+    height: 500px;
+    background-color: antiquewhite;
+    position: sticky;
+    top: 150px;
+    left: 10px;
+    padding: 20px;
+}
+
+#div1 p {
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: red;
+}
+
+#div1 select {
+    width: 100%;
+    padding: 10px 0px;
+}
+
+#div1 h1 {
+    font-size: 9.0rem;
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media screen and (min-width:701px) and (max-width:1000px) {
+
+    /* Here Write all the necessery styles for Medium Screen size  */
+    #nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nav2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #div2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        margin-top: 40px;
+
+
+    }
+}

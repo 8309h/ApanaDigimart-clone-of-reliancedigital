@@ -1,0 +1,89 @@
+#nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+  }
+  #nav h1{
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     color: white;
+}
+
+  #img {
+    width: 20%;
+  }
+
+  #img>a>img {
+    width: 100%;
+    height: 80px;
+  }
+  #fuction {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    
+  }
+
+  #fuction button {
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+  }
+
+  #fuction span {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+  }
+  h1{
+    color: white;
+  }
+  #OTP{
+      margin: auto;
+      width: 300px;
+      background-color: red;
+      padding: 20px;
+      margin-top: 30px;
+     
+
+  }
+  #OTP input,button{
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px 0px;
+  }
+  #otp2{
+      width: 300px;
+      margin: auto;
+      align-self: center;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      background-color: aqua;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      display: none;
+  }
+  #otp2 img{
+      width: 60%;
+      border-radius: 50%;
+     
+  }
+  #otp2 p{
+      font-weight: bold;
+      font-size: 20px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+      'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  #otp2 button{
+      padding: 10px 0px;
+      background-color: red;
+      border: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: white;
+      border-radius: 5px;
+  }

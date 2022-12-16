@@ -54,6 +54,7 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
             resize: vertical;
+            
         }
         input[type="submit"]:hover {
          background-color: orangered;
@@ -94,6 +95,7 @@
             
             for(let i=0;i<details_arr.length;i++){
                 if(email==details_arr[i].email){
+                    
                     flag_email="yes";
                     pass=details_arr[i].password;
 
@@ -107,7 +109,7 @@
            
             if(flag_email=="yes" && pass==password){
               //alert("login Successful continue your shoping");
-              location.href="index.html"
+              location.href="payment.html";
               form.reload();
             }else{
                 alert("Invalid Email or Password")

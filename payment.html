@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Page</title>
+ <link rel="stylesheet" href="style/payment.css">
+</head>
+
+<body>
+  <div id="nav">
+    <div id="img">
+      <a href="index.html">
+        <img src="./images/apana.digital.png" alt="">
+      </a>
+
+    </div>
+    <div>
+      <h1>Welcome:-<span id="welcome"> </span></h1>
+    </div>
+
+    <div id="fuction">
+      <a href="cart.html"><button>🛒Cart</button></a><span>|</span>
+      <a href="login.html"><button>🔏Login</button></a>
+    </div>
+  </div>
+  <form>
+    <input type="text" id="name" placeholder="Name" />
+    <input type="number" id="cardNo" placeholder="Card Number" />
+    <input type="number" id="cardCvv" placeholder="CVV Number" />
+    <input type="submit" value="Confirm" />
+  </form>
+</body>
+<script>
+  let logeduser = JSON.parse(localStorage.getItem("loggedUser")) || [];
+  console.log(logeduser)
+  document.querySelector("#welcome").textContent = logeduser.name;
+
+  let payment = document.querySelector("form");
+  payment.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let name = document.querySelector('#name').value;
+    let cardNo = document.querySelector('#cardNo').value;
+    let cvv = document.querySelector('#cardCvv').value;
+
+    let obj = {
+      name, cardNo, cvv
+    }
+
+    console.log(obj)
+    if (obj.name == "" || obj.cardNo == "" || obj.cvv == "") {
+      alert("Any of the Given fields are empty");
+    } else {
+      alert("Enter the OTP")
+      window.location = "./otp.html"
+    }
+  });
+
+</script>
+
+</html>
