@@ -6,128 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart Page</title>
-    <style>
-        * {
-            padding: 0px;
-            margin: 0px;
-        }
-
-        #nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: red;
-        }
-
-        #img {
-            width: 20%;
-        }
-
-        #img>a>img {
-            width: 100%;
-            height: 80px;
-        }
-
-        #search {
-            display: flex;
-
-        }
-
-        #fuction {
-            display: flex;
-            gap: 20px;
-            justify-content: space-around;
-        }
-
-        #fuction button {
-            border: none;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            background-color: red;
-        }
-
-        #fuction span {
-            font-size: 20px;
-            color: white;
-            font-weight: bold;
-        }
-
-        #nav h1 {
-            color: white;
-        }
-
-        #search>input {
-            padding: 10px 30px;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border: none;
-        }
-
-        #search>button {
-            padding: 10px 30px;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-            border: none;
-        }
-
-        #stick {
-            width: 100%;
-            position: fixed;
-            z-index: 1;
-            top: 0px;
-        }
-
-        #cart-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: auto;
-            gap: 20px;
-            margin-top: 40px;
-
-
-        }
-
-        #cart-container img {
-            width: 70%;
-            height: 40%;
-        }
-
-        #cart-container div {
-            height: fit-content;
-            padding: 10px;
-            box-shadow: rgba(7, 7, 7, 0.35) 0px 5px 15px;
-        }
-
-        #cart-container>div h3,
-        p {
-
-            margin: 10px;
-
-        }
-
-
-        #cart-container button:hover {
-            color: white;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        #cart-container button {
-            background-color: red;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-
-        #total {
-            margin-top: 150px;
-            margin-left: 30px;
-        }
-    </style>
+   <link rel="stylesheet" href="./style/cart.css">
 </head>
 
 <body>
@@ -140,108 +19,37 @@
 
             </div>
             <div>
-                <h1>Welcome:-<span id="welcome"> harshal</span></h1>
+                <h1>Welcome:-<span id="welcome"> </span></h1>
             </div>
-            <div id="search">
-                <input type="text" placeholder="Search item here">
-                <button>Search</button>
-            </div>
+
             <div id="fuction">
                 <a href="index.html"><button>Home</button></a><span>|</span>
                 <a href="login.html"><button>🔏Login</button></a>
             </div>
         </div>
     </div>
-    <div id="total">
-        <h1>Your Total cart Price is:- <span id="cart-total">0</span></h1>
-        <input type="text" id="cupon-filled" placeholder="masai30" />
-        <button id="cupon-active">Submit</button>
+    <div id="flex">
+        <div id="total">
+            <h1>Your Total cart Price is:- <span id="cart-total">0</span></h1>
+            <form>
+                <input type="text" id="cupon-filled" placeholder="Enter coupen code here" />
+              
+                <input type="submit">
+            </form>
+
+            <a href="login.html"><button>Buy Now</button></a>
+            <div id="offer">
+                <p>Use the coupen code Harsh30 and get the discount upto 30%</p>
+                <p>🎁👌😍</p>
+            </div>
+        </div>
+        <div id="cart-container">
+            <!-- Here Append All the cart Products  -->
+        </div>
     </div>
-    <div id="cart-container">
-        <!-- Here Append All the cart Products  -->
-    </div>
+
 </body>
-<script>
-    let cartitem = JSON.parse(localStorage.getItem("cart")) || [];
 
-    displaycard(cartitem);
-
-    function displaycard(out) {
-
-        let total = 0;
-        document.querySelector("#cart-container").innerHTML = "";
-        let count = 1
-
-        out.forEach(function (el, i) {
-
-            let card = document.createElement("div");
-
-            let imageProd = document.createElement("img");
-            imageProd.setAttribute("src", el.Image)
-
-            let title = document.createElement("h3");
-            title.innerText = el.Title;
-
-            let des = document.createElement("p")
-            des.innerText = el.Description
-
-            let cate = document.createElement("h3")
-            cate.innerText = el.Category;
-
-            let price = document.createElement("h3");
-            price.innerText = "Rs" + " " + el.Price;
-
-            let btn1 = document.createElement("button");
-            btn1.textContent = "+";
-            btn1.addEventListener("click", function () {
-                count++;
-                qtn.textContent = count;
-                total = total + Number(el.price)
-                totalprice.textContent = total;
-
-            })
-            let qtn = document.createElement("span");
-            qtn.textContent = el.quantity;
-
-            let btn2 = document.createElement("button");
-            btn2.textContent = "-";
-
-            btn2.addEventListener("click", function () {
-                if (count <= 1) {
-                    let cartdata = JSON.parse(localStorage.getItem("cart")) || [];
-                    cartdata.splice(i, 1);
-                    localStorage.setItem("cart", JSON.stringify(cartdata));
-                    displaycard(cartdata);
-                } else {
-                    count--;
-                    qtn.textContent = count;
-                    total = total - Number(el.price)
-                    totalprice.textContent = total;
-                }
-
-            })
-
-            let btn3 = document.createElement("button");
-            btn3.textContent = "Remove";
-            btn3.addEventListener("click", function () {
-
-                let cartdata = JSON.parse(localStorage.getItem("cart")) || [];
-                cartdata.splice(i, 1);
-                localStorage.setItem("cart", JSON.stringify(cartdata));
-                displaycard(cartdata);
-            })
-            total = total + Number(el.Price);
-
-            let totalprice = document.querySelector("#cart-total");
-            totalprice.textContent = total;
-
-            card.append(imageProd,title,des,cate,price, btn1, qtn, btn2, btn3);
-
-            document.querySelector("#cart-container").append(card);
-
-        })
-    }
-
-</script>
 
 </html>
+<script src="./script/cart.js"></script>

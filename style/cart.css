@@ -1,0 +1,205 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+    height: 75px;
+}
+
+#img {
+    width: 20%;
+}
+
+#img>a>img {
+    width: 100%;
+    height: 80px;
+}
+
+#search {
+    display: flex;
+
+}
+
+#fuction {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+#fuction button {
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+}
+
+#fuction span {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#nav h1 {
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+#search>input {
+    padding: 10px 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+}
+
+#search>button {
+    padding: 10px 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+}
+
+#stick {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+}
+
+#cart-container {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-top: 40px;
+
+
+
+}
+
+#cart-container img {
+    width: 70%;
+    height: 40%;
+}
+
+#cart-container div {
+    height: 550px;
+    padding: 10px;
+    box-shadow: rgba(7, 7, 7, 0.35) 0px 5px 15px;
+}
+
+#cart-container>div h3,
+p {
+
+    margin: 10px;
+
+}
+
+
+#cart-container button:hover {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cart-container button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+#total {
+    width: 30%;
+    height: 400px;
+    position: sticky;
+    top: 80px;
+    left: 10px;
+    margin-bottom: 50px;
+
+}
+
+#flex {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: red;
+    margin-top: 10px;
+
+}
+
+form input,
+select {
+    width: 100%;
+    padding: 10px 0px 10px 5px;
+    margin-bottom: 7px;
+}
+
+form+a>button {
+    width: 100%;
+    margin: auto;
+    padding: 10px 0px 10px 5px;
+    margin-top: 50px;
+    background-color: red;
+    color: white;
+
+}
+
+#offer {
+    background-color: red;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    height: 50%;
+    color: white;
+
+}
+
+#offer>p+p {
+    font-size: 60px;
+    border: none;
+
+}
+
+@media screen and (min-width:701px) and (max-width:1000px) {
+
+    /* Here Write all the necessery styles for Medium Screen size  */
+    #nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nav2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #cart-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        margin-top: 40px;
+
+
+    }
+}

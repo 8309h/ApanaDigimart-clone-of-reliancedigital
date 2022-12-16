@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP</title>
+    <!-- <style>
+    
+    </style> -->
+    <link rel="stylesheet" href="./style/otp.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="img">
+            <a href="index.html">
+                <img src="./images/apana.digital.png" alt="">
+            </a>
+
+        </div>
+        <div>
+            <h1>Welcome:-<span id="welcome"></span></h1>
+        </div>
+
+        <div id="fuction">
+            <a href="cart.html"><button>🛒Cart</button></a><span>|</span>
+            <a href="login.html"><button>🔏Login</button></a>
+        </div>
+    </div>
+    <div id="OTP">
+        <input type="number" id="otp" placeholder="Enter the otp" />
+        <button id="submit">Submit</button>
+    </div>
+    <div id="otp2">
+
+        <p>Congratulations Your Payment of Rs:-<span id="disprice"></span> Recrived Successful</p>
+        <p>Your product has been dispatch soon</p>
+        <img src="https://media.istockphoto.com/id/919118254/vector/check-mark-logo-vector-or-icon.jpg?s=612x612&w=0&k=20&c=K2y_bMzP74NfPtxo8xcG2Vi3eT4GwF1aUAeIUPEio3E="
+            alt="">
+        <h2>Thank You</h2>
+        <a href="./index.html"><button>Click here to shop more</button></a>
+    </div>
+
+</body>
+<script>
+    let logeduser = JSON.parse(localStorage.getItem("loggedUser")) || [];
+    console.log(logeduser)
+    document.querySelector("#welcome").textContent = logeduser.name;
+    let btn = document.querySelector('#submit');
+    btn.addEventListener('click', function (event) {
+
+        event.preventDefault();
+        let flag = "no"
+        let enterotp = document.querySelector('#otp').value;
+
+        if (enterotp == "1234") {
+            flag = "yes"
+
+            if (flag) {
+
+                alert("Your money has been debited")
+                let box = document.querySelector("#OTP");
+                box.style.display = "none"
+
+                let hide = document.querySelector("#otp2");
+                hide.style.display = "block"
+
+            }
+        } else {
+            alert("Wrong Otp")
+        }
+    });
+
+    let val = localStorage.getItem("disprice")
+    document.querySelector("#disprice").innerHTML = val;
+
+
+</script>
+
+</html>

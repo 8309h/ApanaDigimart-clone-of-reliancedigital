@@ -5,128 +5,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <style>
-        #main{
-            margin: auto;
-            width: 300px;
-            padding: 30px;
-            margin-top: 50px;
+    <title>All products</title>
+    <link rel="stylesheet" href="style/all.css">
 
-        }
-        #main>input{
-            padding: 10px 0px;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        #main>button{
-            padding: 10px 0px;
-            width: 100%;
-            margin-bottom: 10px;
-            background-color: red;
-            color: white;
-        }
-        form{
-            width: 300px;
-            margin: auto;
-            padding: 30px;
-            background-color: aqua;
-
-        }
-        #container input,select{
-            width: 100%;
-            padding: 10px 0px ;
-            margin-bottom: 10px;
-        }
-        #container>[type="submit"]:hover{
-
-            background-color: red;
-            color: white;
-            
-        }
-        h1{
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="main">
-        <input id="admin" type="text" placeholder="Enter admin code here">
-        <button id="submit">Submit</button>
+    <div id="stick">
+        <div id="nav">
+            <div id="img">
+                <a href="index.html">
+                    <img src="./images/apana.digital.png" alt="">
+                </a>
+
+            </div>
+            <div>
+
+                <h1>Welcome:-<span id="welcome"></span></h1>
+            </div>
+
+            <div id="fuction">
+                <a href="cart.html"><button>🛒Cart</button></a><span>|</span>
+                <a href="login.html"><button>🔏Login</button></a>
+            </div>
+        </div>
+        <div id="nav2">
+
+            <a href="all.html"><button>Mobiles&Tab</button></a>
+            <a href="all.html"><button>Laptop</button></a>
+            <a href="all.html"><button>Computer</button></a>
+            <a href="all.html"><button>Personal Care</button></a>
+            <a href="all.html"><button>Cameras</button></a>
+            <a href="all.html"><button>Sounds</button></a>
+            <a href="all.html"><button>Video Player</button></a>
+
+        </div>
     </div>
-   
-    <div id="container">
-        <h1>Add New Products to Site</h1>
-        <form>
-            <input type="text" placeholder="Name of product" required id="name" />
-            <br />
-            <select name="Brand" id="brand">
+    <div id="body">
+        <div id="div1">
+            <p>Here you can sort product by their category</p>
+            <select name="category" id="filter">
                 <option value="all">All</option>
-                <option value="apple">Apple</option>
-                <option value="samsung">Samsung</option>
-                <option value="vivo">Vivo</option>
-                <option value="oneplus">One Plus</option>
-                <option value="oneplus">MI</option>
+                <option value="Mobile phones">Mobile</option>
+                <option value="Tv">TV</option>
+                <option value="Refrigerator">Refrigerator</option>
+                <option value="Laptops">Laptops</option>
             </select>
             <br />
-            <select name="category" id="Category">
-                <option value="all">All</option>
-                <option value="mobile">Mobile</option>
-                <option value="tv">TV&laptop</option>
-                <option value="electronics">Electronics</option>
-               
+            <p>Here you can arrange product by their price</p>
+            <select name="sorting" id="sort">
+                <option value="">Sorting</option>
+                <option value="LTH">Lower-higher</option>
+                <option value="HTL">Higher-lower</option>
             </select>
-            <br />
-            <input type="number" placeholder="Price" required id="price" />
-            <br />
-            <input type="url" placeholder="image source" required id="img" />
-            <br />
-            <input type="submit" />
-        </form>
+            <h1>💖</h1>
+        </div>
+        <div id="div2">
+            <!-- All product apend Here. -->
+
+        </div>
     </div>
+
 </body>
 
 </html>
-<script>
-    let pass  = document.querySelector("#main");
-     
-    let container = document.querySelector("#container");
-    container.style.display = "none";
-
-    document.querySelector("#submit").addEventListener("click", adminfun)
-    function adminfun() {
-        let val = document.querySelector("#admin").value;
-        //console.log(val)
-
-        let code = 1234;
-        if (code == val) {
-            alert("Welcome Admin")
-            pass.style.display = "none";
-            container.style.display = "block";
-
-        } else {
-            alert("You don't have access to it")
-        }
-    }
-
-    let productsArr = JSON.parse(localStorage.getItem("products")) || [];
-    let form = document.querySelector("form");
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let product = {
-            Title: form.name.value,
-            Price: form.price.value,
-            Description: form.brand.value,
-            Category: form.category.value,
-            Image: form.img.value,
-        };
-        if (product.brand == "all" || product.category == "all") {
-            alert("please provide category & brand");
-        } else {
-            productsArr.push(product);
-            localStorage.setItem("products", JSON.stringify(productsArr));
-            alert('product added successfully')
-        }
-    });
-</script>
+<script src="./script/all.js"></script>
