@@ -27,7 +27,7 @@
             background-image: url("./images/apana.digital.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            opacity: 0.9;
+           
             color: white;
             font-size: bolder;
             margin-bottom: 30px;
@@ -88,10 +88,8 @@
             <label>E-mail</label><br>
             <input id="email" type="email" placeholder="Enter your email"><br>
             <label for="pwd">Password</label><br>
-            <!-- <input type="password" id="password" name="pwd" minlength="4" placeholder="Enter password"> -->
-            <input type="password" value="" id="pass" placeholder="Enter password"><br>
-            <label>Show Password</label><br>
-            <input type="checkbox" onclick="myFunction()">
+            <input type="password" id="password" name="pwd" minlength="4" placeholder="Enter password">
+            
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam blanditiis recusan</p>
             <input id="butt" type="submit" value="Login ">
             <h3> Do not have an account? <a href="signup.html">Sign-up</a></h3>
@@ -102,14 +100,7 @@
 </html>
 <script>
 
-    function myFunction() {
-        var x = document.getElementById("pass");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
+    
     let details_arr = JSON.parse(localStorage.getItem("details")) || []
     let form = document.querySelector('form')
     form.addEventListener('submit', myfun)
