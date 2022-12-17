@@ -13,38 +13,47 @@
             padding: 0;
             scroll-behavior: smooth;
         }
-        body{
+
+        body {
             margin: auto;
         }
-        form{
+
+        form {
             width: 400px;
             background-color: white;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            margin:0px auto;
+            margin: 0px auto;
             padding: 30px;
             background-image: url("./images/apana.digital.png");
-            background-repeat:no-repeat;
+            background-repeat: no-repeat;
             background-size: 100% 100%;
+            opacity: 0.9;
             color: white;
             font-size: bolder;
             margin-bottom: 30px;
             margin-top: 30px;
-           
+
         }
-        h2{
+
+        h2 {
             font-size: 30px;
-            
+
         }
-        h3{
+
+        h3 {
             text-align: center;
             margin-top: 30px;
             color: black;
         }
-        p{
+
+        p {
             text-align: center;
             margin-top: 20px;
+            color: black;
+            font-weight: bold;
         }
-        input{
+
+        input {
             width: 100%;
             padding: 12px 10px;
             color: black;
@@ -54,67 +63,87 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
             resize: vertical;
-            
+
         }
+
         input[type="submit"]:hover {
-         background-color: orangered;
-         color: white;
-         font-size: 20px;
-         cursor: pointer;
+            background-color: orangered;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        input[type="checkbox"]{
+            
+            padding: 5px;
+            text-align: start;
         }
         
     </style>
 </head>
+
 <body>
-        <div id="input">
-            <form>
+    <div id="input">
+        <form>
             <h2>Login🤝</h2>
             <label>E-mail</label><br>
             <input id="email" type="email" placeholder="Enter your email"><br>
             <label for="pwd">Password</label><br>
-            <input type="password" id="password" name="pwd" minlength="4" placeholder="Enter password">
+            <!-- <input type="password" id="password" name="pwd" minlength="4" placeholder="Enter password"> -->
+            <input type="password" value="" id="pass" placeholder="Enter password"><br>
+            <label>Show Password</label><br>
+            <input type="checkbox" onclick="myFunction()">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam blanditiis recusan</p>
-            <input id="butt" type="submit" value= "Login ">
+            <input id="butt" type="submit" value="Login ">
             <h3> Do not have an account? <a href="signup.html">Sign-up</a></h3>
-          </form>
-        </div>
+        </form>
+    </div>
 </body>
+
 </html>
 <script>
-    let details_arr = JSON.parse(localStorage.getItem("details"))||[]
-   let form =  document.querySelector('form')
-   form.addEventListener('submit', myfun)
-    function myfun(event){
-        event.preventDefault();  
+
+    function myFunction() {
+        var x = document.getElementById("pass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    let details_arr = JSON.parse(localStorage.getItem("details")) || []
+    let form = document.querySelector('form')
+    form.addEventListener('submit', myfun)
+    function myfun(event) {
+        event.preventDefault();
         let email = document.querySelector('#email').value;
         let password = document.querySelector('#password').value;
-        if( email !=="" && password !==""){
-            let flag_email="No";
-            let pass="";
+        if (email !== "" && password !== "") {
+            let flag_email = "No";
+            let pass = "";
             let temp;
-            
-            for(let i=0;i<details_arr.length;i++){
-                if(email==details_arr[i].email){
-                    
-                    flag_email="yes";
-                    pass=details_arr[i].password;
+
+            for (let i = 0; i < details_arr.length; i++) {
+                if (email == details_arr[i].email) {
+
+                    flag_email = "yes";
+                    pass = details_arr[i].password;
 
                     temp = details_arr[i];
                     localStorage.setItem("loggedUser", JSON.stringify(details_arr[i]));
 
-                   
+
                 }
                 console.log(details_arr[i]);
             }
-           
-            if(flag_email=="yes" && pass==password){
-              //alert("login Successful continue your shoping");
-              location.href="payment.html";
-              form.reload();
-            }else{
+
+            if (flag_email == "yes" && pass == password) {
+
+                location.href = "payment.html";
+                form.reload();
+            } else {
                 alert("Invalid Email or Password")
             }
-        }else{
+        } else {
             alert("please fill the valid details")
         }
     }
