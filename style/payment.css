@@ -1,14 +1,13 @@
 form {
   width: 300px;
   padding: 20px;
-  background-image: url("./images/apana.digital.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-color: antiquewhite;
   margin: auto;
   margin-top: 50px;
-  background-color: red;
+  
 
 }
+
 
 input {
   margin-bottom: 10px;
@@ -63,3 +62,9 @@ input {
 h1 {
   color: white;
 }
+input[type="submit"]:hover {
+  background-color: orangered;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+ }
