@@ -163,6 +163,10 @@ p {
     margin-top: 10px;
     text-align: center;
 }
+#div2 img:hover{
+    width: 80%;
+    cursor: pointer;
+}
 
 @media screen and (min-width:701px) and (max-width:1000px) {
 

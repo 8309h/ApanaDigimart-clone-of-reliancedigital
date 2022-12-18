@@ -119,6 +119,10 @@ p {
     border-radius: 4px;
     font-size: 15px;
 }
+#cart-container img:hover{
+    width: 80%;
+    cursor: pointer;
+}
 
 #total {
     width: 30%;
@@ -193,7 +197,7 @@ form+a>button:hover {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    height: 50%;
+    /* height: 50%; */
     color: white;
 
 }

@@ -896,7 +896,7 @@ function Display(data) {
         des.innerText = elem.Description
 
         let cate = document.createElement("h3")
-        cate.innerText = elem.Category;
+        cate.innerText =  elem.Category;
 
         let price = document.createElement("h3");
         price.innerText = "Rs" + " " + elem.Price

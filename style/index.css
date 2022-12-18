@@ -280,6 +280,14 @@
     width: 120%;
     cursor: pointer;
 }
+#container img:hover{
+    width: 80%;
+    cursor: pointer;
+}
+#cont2 img:hover{
+    width: 80%;
+    cursor: pointer;
+}
 
 #banner img:hover {
     width: 110%;
@@ -316,6 +324,7 @@ h1:hover {
     height: 40%;
 }
 
+
 #container div {
     height: 550px;
     padding: 10px;
@@ -344,6 +353,7 @@ p {
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 15px;
+    
 }
 
 #cont2 {
@@ -397,6 +407,12 @@ p {
         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
 }
+#footer>div h1,p:hover{
+    color: black;
+    
+
+}
+
 
 @media screen and (min-width:701px) and (max-width:1000px) {
 

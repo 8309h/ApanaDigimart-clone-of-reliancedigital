@@ -3,7 +3,6 @@ console.log(logeduser)
 document.querySelector("#welcome").textContent = logeduser.name;
 // console.log(logeduser.name)
 
-
 let cartitem = JSON.parse(localStorage.getItem("cart")) || [];
 
 displaycard(cartitem);
