@@ -832,7 +832,7 @@ function displayCard(prdtArr) {
         price.innerText = "Rs" + " " + elem.Price
 
         let btn = document.createElement("button");
-        btn.innerText = "Add to card"
+        btn.innerText = "Add to cart"
 
         btn.addEventListener("click", function () {
 
